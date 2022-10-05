@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "102009676390",
+    "project_id": "agreste-imports-2f0c1",
+    "storage_bucket": "agreste-imports-2f0c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102009676390:android:e8d75fed02006c367f83a7",
+        "android_client_info": {
+          "package_name": "com.example.agresteimports"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102009676390-q9333jtq680lcptr6sunsb31m5cfu3cj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0-c5MGisglkQ5OVWW26cNss8Pl_sFJrE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102009676390-q9333jtq680lcptr6sunsb31m5cfu3cj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

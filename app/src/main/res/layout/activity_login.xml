@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.agresteimports.LoginActivity">
+
+
+    <ImageView
+        android:id="@+id/login_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logoo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+    <EditText
+        android:id="@+id/login_campo_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:hint="Email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_logo"
+        app:startIconDrawable="@drawable/ic_email"
+        android:maxLength="40"
+        />
+
+
+    <EditText
+        android:id="@+id/login_campo_senha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Senha"
+        app:layout_constraintEnd_toEndOf="@id/login_campo_email"
+        app:layout_constraintStart_toStartOf="@id/login_campo_email"
+        app:layout_constraintTop_toBottomOf="@id/login_campo_email"
+        android:maxLength="8"
+        android:inputType="numberPassword"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_botao_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botao_cadastrar_encomenda"
+        android:text="Login "
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/login_campo_senha"
+        app:layout_constraintStart_toStartOf="@id/login_campo_senha"
+        app:layout_constraintTop_toBottomOf="@id/login_campo_senha" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_botao_cadastrar_usuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Cadastre-se"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/login_botao_login"
+        app:layout_constraintStart_toStartOf="@id/login_botao_login"
+        app:layout_constraintTop_toBottomOf="@id/login_botao_login"
+        android:background="@drawable/botao_cadastrar_usuario"
+        />
+
+    <ProgressBar
+        android:id="@+id/login_progessbar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toStartOf="@id/login_botao_cadastrar_usuario"
+        app:layout_constraintEnd_toEndOf="@id/login_botao_cadastrar_usuario"
+        app:layout_constraintTop_toBottomOf="@id/login_botao_cadastrar_usuario"
+        android:layout_margin="8dp"
+        android:indeterminateTint="@color/cor_inicial_menu"
+        android:visibility="invisible"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

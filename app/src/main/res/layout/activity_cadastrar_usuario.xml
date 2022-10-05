@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.agresteimports.LoginActivity">
+
+
+    <ImageView
+        android:id="@+id/cadastrar_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logoo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+    <EditText
+        android:id="@+id/cadastrar_campo_nome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:hint="Nome"
+        android:inputType="textCapWords"
+        android:maxLength="40"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cadastrar_logo"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQKRTUVWXYZ "
+
+        />
+
+    <EditText
+        android:id="@+id/cadastrar_campo_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:maxLength="40"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cadastrar_campo_nome" />
+
+
+    <EditText
+        android:id="@+id/cadastrar_campo_senha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Senha"
+        android:inputType="numberPassword"
+        android:maxLength="8"
+        app:endIconMode="password_toggle"
+        app:layout_constraintEnd_toEndOf="@id/cadastrar_campo_email"
+        app:layout_constraintStart_toStartOf="@id/cadastrar_campo_email"
+        app:layout_constraintTop_toBottomOf="@id/cadastrar_campo_email" />
+
+
+    <EditText
+        android:id="@+id/cadastrar_campo_repita_senha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Repita a senha"
+        android:inputType="numberPassword"
+        android:maxLength="8"
+        app:layout_constraintEnd_toEndOf="@id/cadastrar_campo_senha"
+        app:layout_constraintStart_toStartOf="@id/cadastrar_campo_senha"
+        app:layout_constraintTop_toBottomOf="@id/cadastrar_campo_senha" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cadastrar_botao_cadastrar_usuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botao_cadastrar_encomenda"
+        android:text="Registre-se"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/cadastrar_campo_repita_senha"
+        app:layout_constraintStart_toStartOf="@id/cadastrar_campo_repita_senha"
+        app:layout_constraintTop_toBottomOf="@id/cadastrar_campo_repita_senha" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cadastrar_botao_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botao_cadastrar_usuario"
+        android:text="Login"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/cadastrar_botao_cadastrar_usuario"
+        app:layout_constraintStart_toStartOf="@id/cadastrar_botao_cadastrar_usuario"
+        app:layout_constraintTop_toBottomOf="@id/cadastrar_botao_cadastrar_usuario"
+
+        />
+    <ProgressBar
+        android:id="@+id/cadastrar_progessbar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toStartOf="@id/cadastrar_botao_login"
+        app:layout_constraintEnd_toEndOf="@id/cadastrar_botao_login"
+        app:layout_constraintTop_toBottomOf="@id/cadastrar_botao_login"
+        android:layout_margin="8dp"
+        android:indeterminateTint="@color/cor_inicial_menu"
+        android:visibility="invisible"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

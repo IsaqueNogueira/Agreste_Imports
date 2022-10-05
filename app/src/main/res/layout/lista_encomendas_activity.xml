@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/lista_encomendas_boas_vindas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:text="Olá,"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        />
+
+   <TextView
+        android:id="@+id/lista_encomendas_nome_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-15dp"
+        tools:text="Isaque"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/lista_encomendas_boas_vindas"
+        app:layout_constraintTop_toBottomOf="@id/lista_encomendas_boas_vindas" />
+
+    <ImageView
+        android:id="@+id/lista_encomendas_icone_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_avatar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.04000002" />
+
+    <View
+        android:id="@+id/lista_encomendas_view_menu_nova_encomenda"
+        android:layout_width="165dp"
+        android:layout_height="40dp"
+        android:layout_margin="12dp"
+        android:background="@drawable/background_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lista_encomendas_nome_usuario" />
+
+    <TextView
+        android:id="@+id/lista_encomendas_menu_nova_encomenda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_novo_pedido"
+        android:text="Nova encomenda"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/lista_encomendas_view_menu_nova_encomenda"
+        app:layout_constraintEnd_toEndOf="@id/lista_encomendas_view_menu_nova_encomenda"
+        app:layout_constraintStart_toStartOf="@id/lista_encomendas_view_menu_nova_encomenda"
+        app:layout_constraintTop_toTopOf="@id/lista_encomendas_view_menu_nova_encomenda" />
+
+    <View
+        android:id="@+id/lista_encomendas_view_menu_encomendas"
+        android:layout_width="135dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/background_menu_inativo"
+        app:layout_constraintBottom_toBottomOf="@id/lista_encomendas_view_menu_nova_encomenda"
+        app:layout_constraintStart_toEndOf="@id/lista_encomendas_view_menu_nova_encomenda" />
+
+    <TextView
+        android:id="@+id/lista_encomendas_menu_encomendas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cor_menu_inativo"
+        android:drawableStart="@drawable/ic_pedidos"
+        android:text="Encomendas"
+        android:textColor="@color/icon_menu_inativo"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/lista_encomendas_view_menu_encomendas"
+        app:layout_constraintEnd_toEndOf="@id/lista_encomendas_view_menu_encomendas"
+        app:layout_constraintStart_toStartOf="@id/lista_encomendas_view_menu_encomendas"
+        app:layout_constraintTop_toTopOf="@id/lista_encomendas_view_menu_encomendas"
+
+        />
+
+    <EditText
+        android:id="@+id/lista_encomendas_edittext_codigo_rastreio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Código de rastreio"
+        android:inputType="textCapCharacters"
+        android:maxLength="13"
+        android:textSize="20sp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/lista_encomendas_view_menu_nova_encomenda"
+        app:layout_constraintTop_toBottomOf="@id/lista_encomendas_view_menu_nova_encomenda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        android:background="@drawable/edit_text_personalizado"
+        android:padding="5dp"
+        />
+    <EditText
+        android:id="@+id/lista_encomendas_edittext_nome_pacote"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nome do pacote"
+        android:inputType="textCapWords"
+        android:maxLength="80"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/lista_encomendas_edittext_codigo_rastreio"
+        app:layout_constraintTop_toBottomOf="@id/lista_encomendas_edittext_codigo_rastreio"
+        app:layout_constraintEnd_toEndOf="@id/lista_encomendas_edittext_codigo_rastreio"
+        android:background="@drawable/edit_text_personalizado"
+        android:padding="5dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valor total:"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toTopOf="@id/lista_encomendas_valor_total"
+        app:layout_constraintStart_toStartOf="@id/lista_encomendas_valor_total"
+        app:layout_constraintTop_toBottomOf="@+id/lista_encomendas_edittext_nome_pacote"
+        android:layout_marginTop="5dp"
+        />
+    <EditText
+        android:id="@+id/lista_encomendas_valor_total"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/lista_encomendas_edittext_nome_pacote"
+        app:layout_constraintStart_toStartOf="@id/lista_encomendas_edittext_nome_pacote"
+        android:layout_marginTop="20dp"
+        android:maxLength="6"
+        android:inputType="number"
+        android:digits="0123456789."
+        android:background="@drawable/edit_text_personalizado"
+        android:padding="5dp"
+        android:hint="R$"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valor recebido:"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toTopOf="@id/lista_encomendas_valor_recebido"
+        app:layout_constraintStart_toStartOf="@id/lista_encomendas_valor_recebido"
+        app:layout_constraintTop_toBottomOf="@+id/lista_encomendas_edittext_nome_pacote"
+        android:layout_marginTop="5dp"
+        />
+    <EditText
+        android:id="@+id/lista_encomendas_valor_recebido"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/lista_encomendas_edittext_nome_pacote"
+        app:layout_constraintEnd_toEndOf="@id/lista_encomendas_edittext_nome_pacote"
+        app:layout_constraintBottom_toBottomOf="@id/lista_encomendas_valor_total"
+        android:layout_marginTop="20dp"
+        android:maxLength="6"
+        android:inputType="number"
+        android:digits="0123456789."
+        android:background="@drawable/edit_text_personalizado"
+        android:padding="5dp"
+        android:hint="R$"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/lista_encomendas_botao_cadastrar_encomenda"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/lista_encomendas_valor_total"
+        app:layout_constraintEnd_toEndOf="@id/lista_encomendas_valor_recebido"
+        app:layout_constraintTop_toBottomOf="@id/lista_encomendas_valor_total"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        android:text="Cadastrar encomenda"
+        android:background="@drawable/botao_cadastrar_encomenda"
+        android:textColor="@color/white"
+/>
+    <ProgressBar
+        android:id="@+id/lista_encomendas_progessbar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toStartOf="@id/lista_encomendas_botao_cadastrar_encomenda"
+        app:layout_constraintEnd_toEndOf="@id/lista_encomendas_botao_cadastrar_encomenda"
+        app:layout_constraintTop_toBottomOf="@id/lista_encomendas_botao_cadastrar_encomenda"
+        android:layout_margin="8dp"
+        android:indeterminateTint="@color/cor_inicial_menu"
+        android:visibility="invisible"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

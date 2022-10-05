@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/encomendas_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/encomendas_icone_pacote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_package"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="15dp"
+                />
+
+            <TextView
+                android:id="@+id/encomendas_nome_da_encomenda"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Brasil, Flamengo, Corinthians, Vasco, Flamengo, Palmeiras, Fluminense,flamengo,flamengo"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/encomendas_icone_pacote"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="8dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/encomendas_codigo_rastreio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Código rastreio: NL123456122BR"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/encomendas_nome_da_encomenda"
+                app:layout_constraintTop_toBottomOf="@id/encomendas_nome_da_encomenda"
+                android:layout_margin="8dp"
+                />
+            <TextView
+                android:id="@+id/encomendas_info_valor_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Valor total:"
+                app:layout_constraintStart_toStartOf="@id/encomendas_codigo_rastreio"
+                app:layout_constraintTop_toBottomOf="@id/encomendas_codigo_rastreio"
+                />
+            <TextView
+                android:id="@+id/encomendas_valor_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="R$ 1.200,50"
+                app:layout_constraintStart_toEndOf="@id/encomendas_info_valor_total"
+                app:layout_constraintBottom_toBottomOf="@id/encomendas_info_valor_total"
+                android:layout_marginStart="4dp"
+                android:textColor="@color/green"
+                />
+            <TextView
+                android:id="@+id/encomendas_info_valor_recebido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Valor recebido:"
+                app:layout_constraintStart_toStartOf="@id/encomendas_info_valor_total"
+                app:layout_constraintTop_toBottomOf="@id/encomendas_info_valor_total"
+                />
+            <TextView
+                android:id="@+id/encomendas_valor_recebido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="R$ 599,00"
+                app:layout_constraintStart_toEndOf="@id/encomendas_info_valor_recebido"
+                app:layout_constraintBottom_toBottomOf="@id/encomendas_info_valor_recebido"
+                android:layout_marginStart="4dp"
+                android:textColor="@color/green"
+                />
+            <TextView
+                android:id="@+id/encomendas_info_valor_quando_chegar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cliente paga quando chegar:"
+                app:layout_constraintStart_toStartOf="@id/encomendas_info_valor_recebido"
+                app:layout_constraintTop_toBottomOf="@id/encomendas_info_valor_recebido"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/encomendas_valor_quando_chegar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="R$  2.000,00"
+                app:layout_constraintStart_toEndOf="@id/encomendas_info_valor_quando_chegar"
+                app:layout_constraintBottom_toBottomOf="@id/encomendas_info_valor_quando_chegar"
+                android:layout_marginStart="4dp"
+                android:textColor="@color/green"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
