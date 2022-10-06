@@ -1,25 +1,36 @@
 package com.example.agresteimports.ui.activity.agresteimports.model;
 
-import java.math.BigDecimal;
+import java.util.Date;
 
 public class EncomendasCadastro {
 
 
+
+    private Date dataCadastro;
     private String userId;
     private String codigoDeRastreio;
     private String nomeDoPacote;
     private float valorTotal;
     private float valorRecebido;
 
-    public EncomendasCadastro(String userId, String codigoDeRastreio, String nomeDoPacote,
-                      float valorTotal, float valorRecebido){
 
+    public EncomendasCadastro(Date dataCadastro, String userId, String codigoDeRastreio, String nomeDoPacote,
+                              float valorTotal, float valorRecebido){
+
+        this.dataCadastro = dataCadastro;
         this.userId = userId;
         this.codigoDeRastreio = codigoDeRastreio;
         this.nomeDoPacote = nomeDoPacote;
         this.valorTotal = valorTotal;
         this.valorRecebido = valorRecebido;
 
+    }
+    public Date getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public void setDataCadastro(Date dataCadastro) {
+        this.dataCadastro = dataCadastro;
     }
     public String getUserId() {
         return userId;

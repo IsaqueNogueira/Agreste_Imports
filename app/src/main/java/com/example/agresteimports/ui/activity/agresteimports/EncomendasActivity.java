@@ -22,6 +22,8 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class EncomendasActivity extends AppCompatActivity {
@@ -46,7 +48,9 @@ public class EncomendasActivity extends AppCompatActivity {
 
     private void configuraLista() {
         usuarioId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        db.collection("Encomendas").whereEqualTo("userId", usuarioId).get().addOnCompleteListener(task -> {
+        db.collection("Encomendas")
+                .whereEqualTo("userId", usuarioId).orderBy("dataCadastro", Query.Direction.DESCENDING)
+                .get().addOnCompleteListener(task -> {
          if(task.isSuccessful()){
              encomendas = new ArrayList<Encomendas>();
              for (QueryDocumentSnapshot document : task.getResult()) {
@@ -58,6 +62,8 @@ public class EncomendasActivity extends AppCompatActivity {
                 encomendas.add(new Encomendas(userId,"Código de rastreio: "+codigoDeRastreio, nomeDoPacote, new BigDecimal(valorTotal), new BigDecimal(valorRecebido)));
 
              }
+
+
              listaDeEncomendas.setAdapter(new ListaEncomendasAdapter(encomendas, this));
          }
         });
@@ -100,5 +106,6 @@ public class EncomendasActivity extends AppCompatActivity {
         nomeDoUsuario = findViewById(R.id.encomendas_nome_usuario);
         menuListaEncomendas = findViewById(R.id.encomendas_view_menu_nova_encomenda);
         listaDeEncomendas = findViewById(R.id.encomendas_textview);
+
     }
 }

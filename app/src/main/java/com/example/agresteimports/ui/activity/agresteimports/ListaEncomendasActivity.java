@@ -1,39 +1,34 @@
 package com.example.agresteimports.ui.activity.agresteimports;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.ContextMenu;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.agresteimports.R;
-import com.example.agresteimports.ui.activity.agresteimports.model.Encomendas;
 import com.example.agresteimports.ui.activity.agresteimports.model.EncomendasCadastro;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-import java.math.BigDecimal;
+import java.util.Calendar;
+import java.util.Date;
 
 
 public class ListaEncomendasActivity extends AppCompatActivity {
@@ -59,17 +54,21 @@ public class ListaEncomendasActivity extends AppCompatActivity {
         clicouMenuEncomendas();
         clicouBotaoCadastrarEncomenda();
 
-
-
     }
 
 
 
     private void clicouBotaoCadastrarEncomenda() {
+
         botaoCadastrarEncomenda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 usuarioId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+
+                Calendar cal =Calendar.getInstance();
+                Date dataCadastro = cal.getTime();
+
                 String codigoDoRastreio = codigoDeRastreio.getText().toString();
                 String nomeDaEncomenda = nomeDoPacote.getText().toString();
                 String valorTotalDaEncomenda = valorTotal.getText().toString();
@@ -77,7 +76,7 @@ public class ListaEncomendasActivity extends AppCompatActivity {
                 if (!TextUtils.isEmpty(codigoDoRastreio) && !TextUtils.isEmpty(nomeDaEncomenda) &&
                         !TextUtils.isEmpty(valorTotalDaEncomenda) && !TextUtils.isEmpty(valorRecebidoDaEncomenda)) {
                     loading.setVisibility(View.VISIBLE);
-                    EncomendasCadastro encomendas = new EncomendasCadastro(usuarioId, codigoDoRastreio, nomeDaEncomenda, Float.parseFloat(valorTotalDaEncomenda), Float.parseFloat(valorRecebidoDaEncomenda));
+                    EncomendasCadastro encomendas = new EncomendasCadastro(dataCadastro,usuarioId, codigoDoRastreio, nomeDaEncomenda, Float.parseFloat(valorTotalDaEncomenda), Float.parseFloat(valorRecebidoDaEncomenda));
                     DocumentReference documentReference = db.collection("Encomendas").document();
                     documentReference.set(encomendas).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
